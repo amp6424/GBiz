@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBiz Chatbot</title>
+    <link rel="stylesheet" href="/static/css/output.css">
+    <link rel="icon" type="image/x-icon" href="/static/icons/title-icon.png">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: #f9fafb; /* Light background */
+        }
+
+        .glassy {
+            background: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
+            backdrop-filter: blur(10px); /* Blur effect for glassy look */
+            box-shadow: -80px 100px 240px rgba(38, 118, 155, 0.5); /* Subtle shadow */
+            border-radius: 15px; /* Rounded corners */
+        }
+
+        h1, p {
+            opacity: 1; /* Ensure text is fully visible */
+            transform: none; /* Reset transform */
+            color: rgb(23, 37, 84); /* Text color matching theme */
+        }
+    </style>
+</head>
+<body>
+    <div class="w-full flex flex-col justify-center items-center p-4">
+        <header class="flex flex-row justify-center mt-4  text-blue-950 h-full">
+            <div class="flex-1 flex justify-center items-start">
+                <img src="/static/icons/logo.png" class="w-full" mb-16 alt="Logo">
+            </div>
+        </header>
+
+        <div class="w-full max-w-lg mt-12 mb-8">
+            <!-- Enhanced response container with glassy effect -->
+            <div class="glassy p-6 mb-4">
+                <p class="text-lg font-semibold">Chatbot Response:</p>
+                <p class="mt-2">{{response}}</p>
+            </div>
+        </div>
+
+        <div class="w-full max-w-lg mb-8"> <!-- Container for the input with glassy effect -->
+            <form action="/chatbot" method="post" class="flex">
+                <input type="text" name="prompt" class="glassy rounded-lg p-4 w-full focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Type your message..." required>
+                <button type="submit" class="ml-2 p-4 bg-blue-950 hover:bg-blue-800 rounded-lg text-white">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

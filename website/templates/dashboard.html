@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBiz - Grow your Business</title>
+    <link rel="icon" type="image/x-icon" href="/static/icons/title-icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-blue-50">
+
+    <div class="flex min-h-screen">
+        <div class="w-full p-6 flex gap-6">
+
+            <!-- Left Section -->
+            <div class="w-1/2">
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <div class="bg-blue-950 text-white p-12 rounded-lg hover:cursor-pointer" onclick='document.location="/chatbot";'>
+                        <p class="text-4xl text-gray-100 font-light">
+                            Start creating special offer posts, ads, and more...
+                        </p>
+
+                        <div class="mt-8 flex items-center gap-4">
+                            <button class="bg-white text-blue-950 px-4 py-2 rounded-xl hover:bg-gray-100 transition" onclick='document.location="/chatbot";'>
+                                Get Started
+                            </button>
+                            <button class="bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75v16.5M20.25 12H3.75" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="mt-4 flex relative">
+                        <img class="rounded-lg w-full object-cover" src="/static/images/Anastronautridingahorseinaphotorealisticstyle9.jpg" alt="Astronaut on Horse Image">
+                        <h1 class="absolute w-3/4 m-4 top-0 left-0 p-2 text-white text-4xl font-bold">Image Generation</h1>
+                        <form action="/imageCreation" method="post">
+                            <input type="text" name="prompt" placeholder="Enter text here" class="absolute w-3/4 m-4 bottom-12 left-14 pt-2 pb-2 pl-4 pr-4 bg-white bg-opacity-75 rounded-full shadow-md">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="w-1/2 space-y-6">
+                <!-- Profile Section -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h2 class="text-lg font-bold mb-4">My Profile</h2>
+                    <button class="bg-blue-600 text-white mt-2 px-4 py-2 rounded-md w-full hover:bg-blue-700 transition" onclick="document.location = '/profile';">
+                        Personalize
+                    </button>
+                </div>
+
+                <!-- Social Media and Business Posts -->
+                <div class="flex gap-4">
+                    <div class="bg-white shadow-lg rounded-lg p-4 hover:cursor-pointer" onclick="document.location = '/insights'">
+                        <img class="rounded-lg" width="320" height="240" src="/static/images/2811278-male-face-profile-and-ai-with-future-technology-and-science-with-cloud-computing-and-global-network.-abstract-futuristic-and-digital-transformation-virtual-and-tech-development-on-blue-background-fit_400_400.jpg" alt="Social Media Content">
+                        <p class="text-center text-sm mt-2">Social Media Insights</p>
+                    </div>
+                    <div class="bg-white shadow-lg rounded-lg p-4">
+                        <img class="rounded-lg" width="364" height="240" src="/static/images/business-posts.png" alt="Business Posts">
+                        <p class="text-center text-sm mt-2">Business Posts</p>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- Video Section -->
+                    <div id="vid" class="visible bg-white shadow-lg rounded-lg p-4" onmouseover="showMessage()" onmouseout="hideMessage()">
+                        <video src="/static/images/147246-791334024_small.mp4" autoplay muted loop class="rounded-lg w-full"></video>
+                    </div>
+                    <div id="vidcom" class="hidden bg-white shadow-lg rounded-lg p-4">
+                        <h1>Feature coming soon!</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('vid').classList.add('hidden');
+            document.getElementById('vidcom').classList.remove('hidden');
+        }
+
+        function hideMessage() {
+            document.getElementById('vid').classList.remove('hidden');
+            document.getElementById('vidcom').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
